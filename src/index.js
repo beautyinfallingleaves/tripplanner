@@ -1,5 +1,6 @@
 const mapboxgl = require("mapbox-gl");
 const buildMarker = require('./marker');
+const chicagoCoords = [-87.641, 41.895];
 
 // Pawel's
 // mapboxgl.accessToken = 'pk.eyJ1IjoicGF3ZWwzIiwiYSI6ImNrMTZsOG55dTE2Yjcza3BrcDBwZGE2YmwifQ.9t0-DCmw8tlL15Lk3TVAuQ';
@@ -9,10 +10,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2thbmciLCJhIjoiY2sxNmw4bDJ0MDBnaDNscXAwbm1sd
 
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11'
+  center: chicagoCoords,
+  zoom: 12,
+  style: 'mapbox://styles/mapbox/streets-v10'
 });
 
 // Set the initial marker.
-const marker = buildMarker('activity', [-87.641, 41.895]);
-// console.log(marker);
+const marker = buildMarker('activity', chicagoCoords);
+console.log(marker);
 marker.addTo(map);
