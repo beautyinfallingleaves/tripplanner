@@ -15,7 +15,5 @@ var map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v10'
 });
 
-// Set the initial marker.
-const marker = buildMarker('activity', chicagoCoords);
-console.log(marker);
-marker.addTo(map);
+const newMarker = buildMarker('activity', chicagoCoords);
+newMarker.addTo(map);
